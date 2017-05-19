@@ -1,5 +1,8 @@
 var Crawler = require("crawler");
 var fs = require("fs");
+var path = require("path");
+var mkdirp = require('mkdirp');
+var request = require("request");
 
 var c = new Crawler({
   callback: function(err, res, done) {
@@ -16,11 +19,23 @@ var c = new Crawler({
         if (err) throw err;
 
         // download moar files
+        res.$("script[src^='https://app.scrollytelling.io']").each(function(i, element) {
+          var resource = $(this).attr('src');
+          var localResource = resource.replace('https://', '');
+
+          mkdirp(path.dirname(localResource), function(err) {
+            if (err) throw err;
+
+            request(resource).pipe(fs.createWriteStream(localResource));
+          });
+        });
       });
     });
 
     done();
   }
 });
+
+if (!fs.existsSync("app.scrollytelling.io")) fs.mkdirSync("app.scrollytelling.io");
 
 c.queue("https://jaaroverzicht.radio1.nl/jaaroverzicht");

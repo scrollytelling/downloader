@@ -9,6 +9,8 @@
   "author": "Joost Baaij",
   "license": "ISC",
   "dependencies": {
-    "crawler": "^1.0.5"
+    "crawler": "^1.0.5",
+    "mkdirp": "^0.5.1",
+    "request": "^2.81.0"
   }
 }
