@@ -12,5 +12,9 @@
     "crawler": "^1.0.5",
     "mkdirp": "^0.5.1",
     "request": "^2.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scrollytelling/repository.git"
   }
 }
