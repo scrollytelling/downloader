@@ -12,7 +12,11 @@ var c = new Crawler({
       if (err) throw err;
 
       var $ = res.$;
-      // write html file
+      fs.writeFile(req.host + "/" + req.path + ".html", res.body, function(err) {
+        if (err) throw err;
+
+        // download moar files
+      });
     });
 
     done();
