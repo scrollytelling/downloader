@@ -1,0 +1,11 @@
+{
+  "name": "scrollytelling-downloader",
+  "version": "1.0.0",
+  "description": "Download a Scrollytelling story",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joost Baaij",
+  "license": "ISC"
+}
