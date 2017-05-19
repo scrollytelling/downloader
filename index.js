@@ -1,12 +1,22 @@
 var Crawler = require("crawler");
+var fs = require("fs");
 
 var c = new Crawler({
   callback: function(error, res, done) {
     if(error) {
       console.log(error);
     } else {
-      console.log(res.request.href);
-      var $ = res.$;
+      var req = res.request;
+      console.log(req.href);
+
+      fs.mkdir(req.host, function(err) {
+        if (err) {
+          console.log(err);
+        } else {
+          var $ = res.$;
+          // write html file
+        }
+      });
     }
     done();
   }
