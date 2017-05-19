@@ -5,3 +5,9 @@ Downloads one Scrollytelling story to local files
 ```
 npm install
 ```
+
+# Using
+
+```
+node index.js
+```
