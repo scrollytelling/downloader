@@ -36,6 +36,4 @@ var c = new Crawler({
   }
 });
 
-if (!fs.existsSync("app.scrollytelling.io")) fs.mkdirSync("app.scrollytelling.io");
-
 c.queue("https://jaaroverzicht.radio1.nl/jaaroverzicht");
