@@ -19,7 +19,7 @@ var c = new Crawler({
         if (err) throw err;
 
         // download moar files
-        res.$("script[src^='https://app.scrollytelling.io']").each(function(i, element) {
+        res.$("script[src^='https://scrollytelling.link']").each(function(i, element) {
           var resource = $(this).attr('src');
           var localResource = resource.replace('https://', '');
 
